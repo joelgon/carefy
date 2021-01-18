@@ -14,5 +14,10 @@ use app\Http\Controllers\PatientController;
 |
 */
 
-Route::get('/', action: 'HomeController@__invoke');
-Route::get('patient', action: 'PatientController@index');
+Route::get('/', action: 'HomeController@__invoke')->name('home');
+
+/**********************************************************
+ *                    Patient Routes                      *
+ **********************************************************/
+Route::get('patient', action: 'PatientController@index')->name('patients');
+Route::post('insert-patients', action:'PatientController@store')->name('insert.patient');

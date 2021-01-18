@@ -14,7 +14,7 @@ class Patient extends Migration
     public function up()
     {
         Schema::table('patients', function (Blueprint $table) {
-            $table->foreignId(column: 'preferredPhone')->constrained(table: 'telephone_patients', column: 'id');
+            $table->foreignId(column: 'preferredPhone')->nullable()->constrained(table: 'telephone_patients', column: 'id');
         });
     }
 
